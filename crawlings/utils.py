@@ -55,8 +55,11 @@ def get_toss_data(keyword):
     # print(stock_code)
     community_url = 'https://tossinvest.com/stocks/'+stock_code+'/community'
     # print(community_url)        # https://tossinvest.com/stocks/A005930/community
-    get_community_data(community_url,stock_code)  
+    keyword,stock_code,content = get_community_data(community_url,stock_code)
     
+    return keyword,stock_code,content
+
+
 def get_community_data(url,stock_code):
     
     # 2) 크롬 옵션 객체 생성
@@ -113,5 +116,3 @@ def get_community_data(url,stock_code):
     
     return keyword,stock_code,content
 
-
-get_toss_data('삼성전자')

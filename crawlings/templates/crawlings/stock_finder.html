@@ -12,8 +12,8 @@
     <form action="{% url "crawlings:index" %}" method='POST'>
         {% csrf_token %}
 
-        <label for="name">회사 이름을 입력하세요 : </label>
-        <input type="text" name='name'>
+        <label for="stock_name">회사 이름을 입력하세요 : </label>
+        <input type="text" name='stock_name'>
         {% if stock %}
             <input type="hidden" name='stock_code' value='{{ stock.code }}'>
         {% endif %}
@@ -27,8 +27,8 @@
         <ul>
             {% for comment in comments %}
                 <li>
-                    {{ comment }}
-                    <form action="{% url "crawlings:delete_comments" %}" method='POST'>
+                    {{ comment.content }}
+                    <form action="{% url "crawlings:delete_comment" %}" method='POST'>
                         {% csrf_token %}
                         <input type="hidden" name='comment_pk' value='{{ comment.pk }}'>
                         <input type="hidden" name='stock_code', value='{{ stock.code }}'>

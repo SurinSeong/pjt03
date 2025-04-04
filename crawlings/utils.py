@@ -49,9 +49,5 @@ def get_toss_data(keyword):
     time.sleep(2)
 
 
-    
-
-
-
 
 get_toss_data('삼성전자')

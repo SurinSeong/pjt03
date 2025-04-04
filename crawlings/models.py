@@ -4,7 +4,7 @@ from django.db import models
 class Stock(models.Model):
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=6)
-    last_updated = models.DateField(auto_now=True)
+    updated_at = models.DateField(auto_now=True)
 
 
 # 댓글 모델
